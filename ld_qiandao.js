@@ -17,11 +17,13 @@
 
 //判断是否登录
 function checkLogin() {
-    var checkLogin = document.getElementsByClassName('avatar-small');
+    var checkLogin = document.getElementById('signOut');
     console.log(checkLogin);
     if (checkLogin) {
       isLogin = true;
-    }}
+    }
+    console.log('isLogin:', isLogin);
+}
 
 // 执行绿色签到click
 function qd_button(){
@@ -35,15 +37,4 @@ function onloadStart(){
     //qd_button()
 }
 
-function issign(){
-   var signOutElement = document.getElementById('signOut');
-
-    // 如果该元素存在，则将issignin的值设为true
-    if (signOutElement) {
-      issignin = true;
-    }
-
-    // 输出issignin的值，用于验证结果
-    console.log('issignin:', issignin);
-}
 
