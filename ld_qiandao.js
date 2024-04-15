@@ -18,3 +18,15 @@
 function qianDao(){
     
 }
+
+function issign90{
+   var signOutElement = document.getElementById('signOut');
+
+    // 如果该元素存在，则将issignin的值设为true
+    if (signOutElement) {
+      issignin = true;
+    }
+
+    // 输出issignin的值，用于验证结果
+    console.log('issignin:', issignin);
+}
