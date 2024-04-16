@@ -2,7 +2,7 @@
 // @name         链滴每日签到
 // @namespace    pakeh2866
 // @version      0.1
-// @description  每日第一次签到
+// @description  链滴每日签到
 // @author       pakeh2866
 // @match        https://ld246.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ld246.com
@@ -44,8 +44,8 @@ function checkURL() {
 //判断是否未签到
 function checkqd() {
     var checkqd = document.getElementsByClassName('item item--current');
-    console.log(checkqd);
-    if (checkqd) {
+    console.log(',checkqd:',checkqd);
+    if (checkqd.length > 0) {
       isqd = true;
     }
     console.log('isqd:', isqd);
@@ -69,7 +69,7 @@ function onloadStart(){
             console.log('签到成功')
         }else{
             GM_openInTab("https://ld246.com/activity/checkin");
-            console.log('打开签到页')        
+            console.log('打开签到页')
             }
     }
 }
