@@ -18,6 +18,7 @@
 
 var isLogin = false;
 var isqd = false;
+var targetURL = false;
 //判断是否登录
 function checkLogin() {
     var checkLogin = document.getElementById('signOut');
@@ -30,10 +31,14 @@ function checkLogin() {
 
 //判断网页URL是否为"https://ld246.com/activity/checkin"
 function checkURL() {
-    var checkURL = GM_Info.script.url;
-    console.log(checkURL);
+    var checkURL =  window.location.href
+    //console.log(checkURL);
+    if(checkURL.indexOf("activity/checkin")!= -1){
+        targetURL = true;
+    };
+    console.log('targetURL:', targetURL);
+    };
 
-}
 
 //判断是否未签到
 function checkqd() {
@@ -49,25 +54,24 @@ function checkqd() {
 function qd_button(){
    var button_click = document.getElementsByClassName("btn green");
    console.log(button_click[0])
-   //button_click[0].click();
+   button_click[0].click();
 }
-/*
-function qiandao_page(){
-    let iframe =document.createElement("iframe");
-    document.lastElementChild.appendChild(iframe);
-    iframe.style.display = "none";
-    iframe.src ="https://ld246.com/activity/checkin";
-}*/
 
 function onloadStart(){
     checkLogin()
     checkqd()
+    checkURL()
     if(isLogin&&isqd){
         console.log('已登录、未签到')
-        //GM_openInTab("https://ld246.com/activity/checkin");
-        //qd_button()
-        checkURL()
+        if(targetURL){
+            qd_button()
+            console.log('签到成功')
+        }else{
+            GM_openInTab("https://ld246.com/activity/checkin");
+            console.log('打开签到页')        
+            }
     }
 }
+
 
 
