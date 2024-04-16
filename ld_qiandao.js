@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         链滴每日签到
 // @namespace    pakeh2866
-// @version      0.1
+// @version      0.3
 // @description  链滴每日签到
 // @author       pakeh2866
 // @match        https://ld246.com/*
