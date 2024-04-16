@@ -7,6 +7,7 @@
 // @match        https://ld246.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ld246.com
 // @grant        GM_openInTab
+// @grant        GM_Info
 // ==/UserScript==
 
 (function() {
@@ -25,6 +26,13 @@ function checkLogin() {
       isLogin = true;
     }
     console.log('isLogin:', isLogin);
+}
+
+//判断网页URL是否为"https://ld246.com/activity/checkin"
+function checkURL() {
+    var checkURL = GM_Info.script.url;
+    console.log(checkURL);
+
 }
 
 //判断是否未签到
@@ -56,10 +64,10 @@ function onloadStart(){
     checkqd()
     if(isLogin&&isqd){
         console.log('已登录、未签到')
-        GM_openInTab("https://ld246.com/activity/checkin");
-        qd_button()
+        //GM_openInTab("https://ld246.com/activity/checkin");
+        //qd_button()
+        checkURL()
     }
-    //qd_button()
 }
 
 
