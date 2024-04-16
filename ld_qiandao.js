@@ -8,6 +8,7 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ld246.com
 // @grant        GM_openInTab
 // @grant        GM_Info
+// @license      MIT
 // ==/UserScript==
 
 (function() {
