@@ -2,7 +2,7 @@
 // @name         链滴每日签到
 // @namespace    pakeh2866
 // @version      0.3
-// @description  链滴每日签到
+// @description  每天第一次打开时自动检测是否签到过，若未签到，则执行签到。
 // @author       pakeh2866
 // @match        https://ld246.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ld246.com
